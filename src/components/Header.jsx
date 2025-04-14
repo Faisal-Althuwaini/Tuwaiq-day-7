@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
+import { CartContext } from "../contexts/CartContext";
 
 function Header() {
   const NavLinks = [
@@ -19,7 +20,13 @@ function Header() {
       title: "User",
       url: "/user",
     },
+    {
+      title: "Cart",
+      url: "/cart",
+    },
   ];
+
+  const { cart } = useContext(CartContext);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -40,6 +47,20 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarText">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {NavLinks.map((item, index) => {
+              if (item.title === "Cart") {
+                return (
+                  <li className="nav-item" key={index}>
+                    <Link
+                      className="nav-link active"
+                      aria-current="page"
+                      to={item.url}
+                    >
+                      {item.title} ({cart.length})
+                    </Link>
+                  </li>
+                );
+              }
+
               return (
                 <li className="nav-item" key={index}>
                   <Link

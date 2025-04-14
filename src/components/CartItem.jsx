@@ -1,9 +1,8 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 
-function Product({ product }) {
-  const { addToCart } = useContext(CartContext);
+function CartItem({ product }) {
+  const { removeFromCart } = useContext(CartContext);
   return (
     <div className="col-3">
       <div
@@ -27,17 +26,15 @@ function Product({ product }) {
         <div className="card-body">
           <p className="card-text">{product.title}</p>
           <div className="d-flex justify-content-between align-items-center">
-            <div className="btn-group">
-              <button
-                type="button"
-                className="btn btn-sm btn-success"
-                onClick={() => {
-                  addToCart(product);
-                }}
-              >
-                Add To Cart
-              </button>
-            </div>
+            <button
+              type="button"
+              className="btn btn-sm btn-danger"
+              onClick={() => {
+                removeFromCart(product);
+              }}
+            >
+              Remove from cart
+            </button>
             <p className="text-muted mt-3">{product.price}$</p>
           </div>
         </div>
@@ -46,4 +43,4 @@ function Product({ product }) {
   );
 }
 
-export default Product;
+export default CartItem;
