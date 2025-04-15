@@ -7,6 +7,10 @@ import CartItem from "../components/CartItem";
 
 function Cart() {
   const { cart } = useContext(CartContext);
+  const totalPrice = cart.reduce((total, product) => {
+    return total + product.price;
+  }, 0);
+  console.log(totalPrice);
   console.log(cart);
   return (
     <div>
@@ -23,6 +27,11 @@ function Cart() {
             <CartItem product={product} key={product.id} />
           ))}
         </div>
+        {cart.length > 0 && (
+          <div className="">
+            <h3>Total Price: {totalPrice}$</h3>
+          </div>
+        )}
       </div>
     </div>
   );
