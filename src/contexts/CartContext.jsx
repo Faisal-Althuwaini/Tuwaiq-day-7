@@ -1,9 +1,16 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext([]);
 
 function CartContextProvider({ children }) {
-  const [cart, setCart] = useState([]);
+  const initialCart = localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [];
+  const [cart, setCart] = useState(initialCart);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (product) => {
     //check if product already exists in cart
