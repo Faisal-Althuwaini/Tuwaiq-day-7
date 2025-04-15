@@ -37,6 +37,7 @@ function CartItem({ product }) {
             </button>
             <p className="text-muted mt-3">{product.price}$</p>
           </div>
+          <p className="text-muted mt-3">Quantity: {product.quantity}</p>
         </div>
       </div>
     </div>

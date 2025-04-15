@@ -8,7 +8,7 @@ import CartItem from "../components/CartItem";
 function Cart() {
   const { cart } = useContext(CartContext);
   const totalPrice = cart.reduce((total, product) => {
-    return total + product.price;
+    return total + product.price * product.quantity;
   }, 0);
   console.log(totalPrice);
   console.log(cart);

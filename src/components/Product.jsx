@@ -3,6 +3,10 @@ import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 
 function Product({ product }) {
+  const quantity = {
+    ...product,
+    quantity: 1,
+  };
   const { addToCart } = useContext(CartContext);
   return (
     <div className="col-3">
@@ -32,7 +36,7 @@ function Product({ product }) {
                 type="button"
                 className="btn btn-sm btn-success"
                 onClick={() => {
-                  addToCart(product);
+                  addToCart(quantity);
                 }}
               >
                 Add To Cart
