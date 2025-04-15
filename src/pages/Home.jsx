@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Slider from "../components/Slider";
 import ProductList from "../components/ProductList";
 import Footer from "../components/Footer";
+import { ToastContainer } from "react-toastify";
 
 function HomePage() {
   return (
@@ -12,6 +13,7 @@ function HomePage() {
       <Slider />
       <ProductList />
       <Footer />
+      <ToastContainer type="success" />
     </div>
   );
 }
