@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router";
-import { CartContext } from "../contexts/CartContext";
+import { CartContext, useCart } from "../contexts/CartContext";
 
 function Header() {
   const NavLinks = [
@@ -26,9 +26,9 @@ function Header() {
     },
   ];
 
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container-fluid">
         <Link className="navbar-brand" to={"/"}>
           Shopping Cart App
