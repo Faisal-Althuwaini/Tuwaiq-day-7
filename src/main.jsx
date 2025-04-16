@@ -12,6 +12,9 @@ import Cart from "./pages/Cart.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import User from "./pages/User.jsx";
+import UsersList from "./components/UsersList.jsx";
+import AddUser from "./components/AddUser.jsx";
+import UpdateUser from "./components/UpdateUser.jsx";
 
 createRoot(document.getElementById("root")).render(
   <CartContextProvider>
@@ -22,7 +25,11 @@ createRoot(document.getElementById("root")).render(
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
-        <Route path="/user" element={<User />}></Route>
+        <Route path="/user" element={<User />}>
+          <Route index element={<UsersList />} />
+          <Route path="add" element={<AddUser />} />
+          <Route path="update/:id" element={<UpdateUser />} />
+        </Route>
       </Routes>
     </BrowserRouter>
     <ToastContainer />
