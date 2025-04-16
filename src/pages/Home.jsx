@@ -13,7 +13,6 @@ function HomePage() {
       <Slider />
       <ProductList />
       <Footer />
-      <ToastContainer type="success" />
     </div>
   );
 }

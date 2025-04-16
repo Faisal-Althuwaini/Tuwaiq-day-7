@@ -74,8 +74,12 @@ function Header() {
               );
             })}
           </ul>
+
           <Link className="navbar-text" to={"/login"}>
-            Login
+            <button className="btn ">Login</button>
+          </Link>
+          <Link className="navbar-text" to={"/register"}>
+            <button className="btn ">Register</button>
           </Link>
         </div>
       </div>

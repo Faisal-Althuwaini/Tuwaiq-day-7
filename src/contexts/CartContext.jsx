@@ -39,6 +39,7 @@ function CartContextProvider({ children }) {
   //remove from cart
   const removeFromCart = (product) => {
     // check if product quantity is greater than 1
+    toast.warning("Product removed successfully!");
     if (product.quantity > 1) {
       const updateCart = cart.map((cartItem) => {
         if (cartItem.id === product.id) {
