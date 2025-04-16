@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable no-unused-vars */
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -13,6 +11,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.js";
 import Cart from "./pages/Cart.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
+import User from "./pages/User.jsx";
 
 createRoot(document.getElementById("root")).render(
   <CartContextProvider>
@@ -23,6 +22,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/user" element={<User />}></Route>
       </Routes>
     </BrowserRouter>
     <ToastContainer />
