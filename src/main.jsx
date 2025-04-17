@@ -15,6 +15,7 @@ import User from "./pages/User.jsx";
 import UsersList from "./components/UsersList.jsx";
 import AddUser from "./components/AddUser.jsx";
 import UpdateUser from "./components/UpdateUser.jsx";
+import Producs from "./pages/Products.jsx";
 
 createRoot(document.getElementById("root")).render(
   <CartContextProvider>
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="/dashboard" element={<DashBoard />}></Route>
+        <Route path="/products" element={<Producs />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
